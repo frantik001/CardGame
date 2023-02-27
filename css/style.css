@@ -1,0 +1,235 @@
+@font-face {
+  font-family: "StratosSkyeng";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./Fonts/stratosskyeng-regular.otf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+.app {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #004980;
+  font-family: "StratosSkyeng", sans-serif;
+  flex-direction: column;
+}
+
+.startForm {
+  width: 480px;
+  height: 459px;
+  background: #c2f5ff;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.startForm__title {
+  width: 208px;
+  height: 96px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  color: #004980;
+  margin-top: 52px;
+  text-align: center;
+}
+.startForm__div {
+  margin-top: 48px;
+  display: flex;
+  gap: 24px;
+}
+.startForm__div_label {
+  width: 98px;
+  height: 98px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 72px;
+  color: #0080c1;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.startForm__div_label:hover {
+  background: #b9b9b9;
+}
+.startForm__div_btn {
+  display: none;
+}
+.startForm__div_btn:checked + .startForm__div_label {
+  background: #0080c1;
+  color: #ffffff;
+}
+.startForm__button {
+  margin-top: 67px;
+  width: 246px;
+  height: 50px;
+  background: #7ac100;
+  border-radius: 12px;
+  border: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: #ffffff;
+  transition: 0.3s;
+}
+.startForm__button:hover {
+  background: #558701;
+}
+
+.topDiv {
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topDiv__timerDiv {
+  width: 155px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.topDiv__timerDiv__mins {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  color: #ffffff;
+  width: 45px;
+}
+.topDiv__timerDiv__secs {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  color: #ffffff;
+  width: 45px;
+}
+.topDiv__timerDiv__timer {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 72px;
+  color: #ffffff;
+}
+.topDiv__restartButton {
+  width: 246px;
+  height: 50px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  background: #7ac100;
+  border-radius: 12px;
+  color: #ffffff;
+  border: none;
+  transition: 0.5s;
+}
+.topDiv__restartButton:hover {
+  background: #558701;
+}
+
+.game {
+  width: 50vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  perspective: 600px;
+}
+.game__card {
+  width: 95px;
+  height: 133px;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+.game__card_face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.game__card_face--back {
+  transform: rotateY(180deg);
+}
+.game__card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.endGame {
+  background: rgba(0, 73, 128, 0.9);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 1s;
+}
+.endGame__div {
+  background-color: #c2f5ff;
+  border-radius: 12px;
+  height: 480px;
+  padding-top: 32px;
+  width: 459px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.endGame__div_title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  color: #004980;
+  margin-top: 5px;
+  margin-bottom: 28px;
+}
+.endGame__div_timeText {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+}
+.endGame__div_time {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 72px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+.endGame__div_btn {
+  width: 246px;
+  height: 50px;
+  background: #7ac100;
+  border-radius: 12px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: #ffffff;
+  border: none;
+  transition: 0.5s;
+}
+.endGame__div_btn:hover {
+  background-color: #558701;
+}/*# sourceMappingURL=style.css.map */

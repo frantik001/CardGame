@@ -1,0 +1,261 @@
+@font-face {
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: normal;
+    src: url('./Fonts/stratosskyeng-regular.otf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+.app {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #004980;
+    font-family: 'StratosSkyeng', sans-serif;
+    flex-direction: column;
+}
+
+//start page
+
+.startForm {
+    width: 480px;
+    height: 459px;
+    background: #c2f5ff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+        width: 208px;
+        height: 96px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 48px;
+        color: #004980;
+        margin-top: 52px;
+        text-align: center;
+    }
+
+    &__div {
+        margin-top: 48px;
+        display: flex;
+        gap: 24px;
+
+        &_label {
+            width: 98px;
+            height: 98px;
+            background: #ffffff;
+            border-radius: 12px;
+            border: none;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 64px;
+            line-height: 72px;
+            color: #0080c1;
+            transition: 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &_label:hover {
+            background: #b9b9b9;
+        }
+
+        &_btn {
+            display: none;
+        }
+
+        &_btn:checked + &_label {
+            background: #0080c1;
+            color: #ffffff;
+        }
+    }
+
+    &__button {
+        margin-top: 67px;
+        width: 246px;
+        height: 50px;
+        background: #7ac100;
+        border-radius: 12px;
+        border: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+        color: #ffffff;
+        transition: 0.3s;
+    }
+
+    &__button:hover {
+        background: #558701;
+    }
+}
+
+//game screen
+
+.topDiv {
+    width: 50vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__timerDiv {
+        width: 155px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        &__mins {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 32px;
+            color: #ffffff;
+            width: 45px;
+        }
+
+        &__secs {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 32px;
+            color: #ffffff;
+            width: 45px;
+        }
+
+        &__timer {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 64px;
+            line-height: 72px;
+            color: #ffffff;
+        }
+    }
+    &__restartButton {
+        width: 246px;
+        height: 50px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+        background: #7ac100;
+        border-radius: 12px;
+        color: #ffffff;
+        border: none;
+        transition: 0.5s;
+    }
+
+    &__restartButton:hover {
+        background: #558701;
+    }
+}
+
+.game {
+    width: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    perspective: 600px;
+
+    &__card {
+        width: 95px;
+        height: 133px;
+        position: relative;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+
+        &_face {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            backface-visibility: hidden;
+
+            &--back {
+                transform: rotateY(180deg);
+            }
+        }
+    }
+
+    &__card.is-flipped {
+        transform: rotateY(180deg);
+    }
+}
+
+//endGame
+.endGame {
+    background: rgba(0, 73, 128, 0.9);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+    &__div {
+        background-color: #c2f5ff;
+        border-radius: 12px;
+        height: 480px;
+        padding-top: 32px;
+        width: 459px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &_title {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 48px;
+            color: #004980;
+            margin-top: 5px;
+            margin-bottom: 28px;
+        }
+
+        &_timeText {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        &_time {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 64px;
+            line-height: 72px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+        }
+
+        &_btn {
+            width: 246px;
+            height: 50px;
+            background: #7ac100;
+            border-radius: 12px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 32px;
+            color: #ffffff;
+            border: none;
+            transition: 0.5s;
+        }
+        &_btn:hover {
+            background-color: #558701;
+        }
+    }
+}
